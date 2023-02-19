@@ -8,7 +8,7 @@ const app=express()
 const signupModal=require("./modals/userinfo");
 const {isUserExist, genPasswordHash}=require("./utility/utility")
 const todoModel=require("./modals/usertodoinfo")
-const unProtected=["/login","/signup"]
+const unProtected=["/login","/signup","/"]
 const DATABASE=process.env.DATABASE
 app.use(express.json())
 app.use(express.urlencoded({extended:false}))
