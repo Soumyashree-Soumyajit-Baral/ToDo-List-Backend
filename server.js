@@ -96,8 +96,10 @@ app.post("/signup",async (req,res)=>{
 //     })
 // })
 app.post("/login",(req,res)=>{
+    console.log(req.body.username)
     signupModal.find({username:req.body.username}).then((userData)=>{
         if(userData.length){
+            console.log(req.body.username)
             bcrypt.compare(req.body.password, userData[0].password).then((val)=>{
                 if(val){
                     const authToken= jwt.sign(userData[0].username, process.env.SECRET_KEY)
