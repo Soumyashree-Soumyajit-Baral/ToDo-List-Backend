@@ -192,3 +192,8 @@ app.get("/alltasks", async (req, res) => {
             res.status(400).send(err.message)
         })
 })
+
+app.get("/",(req,res)=>{
+    const name={"App":"Full stack Todo List"}
+    res.status(200).send({name})
+})
