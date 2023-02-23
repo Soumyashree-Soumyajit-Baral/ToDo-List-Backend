@@ -46,7 +46,7 @@ app.listen(port,(err)=>{
 // }, (err)=>{
 //     console.log(err)
 // })
-mongoose.connect(`${DATABASE}`,()=>{
+mongoose.connect(DATABASE,()=>{
     console.log('connected to db');
     // console.log(DATABASE)
   },(err)=>{
