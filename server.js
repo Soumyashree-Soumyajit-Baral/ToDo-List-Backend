@@ -46,7 +46,7 @@ app.listen(port,(err)=>{
 // }, (err)=>{
 //     console.log(err)
 // })
-mongoose.connect(DATABASE,()=>{
+mongoose.connect(`${DATABASE}`,()=>{
     console.log('connected to db');
     // console.log(DATABASE)
   },(err)=>{
@@ -121,9 +121,10 @@ app.get("/uname",(req,res)=>{
 })
 
 app.post("/addtodo",async(req,res)=>{
+    console.log("enter to add todo route")
     const user = req.username;
     const data=req.body
-    // console.log(data,user)
+    console.log(data,user)
     const isUser=await todoModel.find({user:user});
     if(isUser.length){
         const tododata=isUser.map((d)=>d.todos)
